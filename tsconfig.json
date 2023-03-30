@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {//opções de compilação
+    "target": "ES2018",//versão do codigo JS gerado quando fizer o build do TS
+    "lib": ["ES5","ES6","ES2018"],//conjunto de libs que possuem recursos que serão usados
+    "experimentalDecorators": true,//necessário pra o typeOrm
+    "emitDecoratorMetadata": true,//necessário pra o typeOrm
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "outDir": "./dist",//pasta que irá gerar o código JS convertido do TS - Código Final executado com o node
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true, //Tipagem nos parâmetros de funções
+    "noImplicitAny": true,
+    "strictPropertyInitialization": false //
+  },
+  //include e exclude influenciam na velocidade de verificação da tipagem do TS
+  "include": ["src/**/*"],//inclui na verificação do TS todos os arquivos, dentro de todas as pastas da src
+  "exclude": ["node_modules","dist"],//ignora a dist, pois por ser os JS, não precisa de verificação
+  "ts-node": {
+    "files": true
+  }
+
+}
