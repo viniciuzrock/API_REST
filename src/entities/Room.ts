@@ -1,10 +1,16 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
-// import {Entity} from "typeorm"
+import {
+    Entity,
+    PrimaryGeneratedColumn,
+    Column,
+    OneToMany,
+    ManyToMany
+} from 'typeorm';
 import { Video } from './Video';
-//decorator
+import { Subject } from './Subject';
+
 @Entity('rooms')
 export class Room {
-    @PrimaryGeneratedColumn() //PK, autoincrement
+    @PrimaryGeneratedColumn()
     id: number
 
     @Column({ type: 'text' })
@@ -15,4 +21,7 @@ export class Room {
 
     @OneToMany(() => Video, (video:any) => video.room)
     videos: Video[]
+
+    @ManyToMany(() => Subject, (subject) => subject.rooms)
+    subjects: Subject[]
 }
