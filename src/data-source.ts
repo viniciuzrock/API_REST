@@ -14,8 +14,7 @@ export const AppDataSource = new DataSource({
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
     entities: [`${__dirname}/**/entities/*.{ts,js}`],
-    // entities: [Room, Video],
     migrations: [`${__dirname}/**/migrations/*.{ts,js}`],
+    // entities: [Room, Video],
     // migrations: [`src/migrations/**.{ts,js}`],
 })
-console.log(__dirname+ '  AQIO');
